@@ -1,0 +1,30 @@
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  balance: Float!
+  photos: [Photo] @connection(keyName: "byUser", fields: ["id"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Photo @model @key(name: "byUser", fields: ["userID"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  price: Float!
+  url: String!
+  userID: ID!
+  user: User @connection(fields: ["userID"])
+  comments: [Comment] @connection(keyName: "byPhoto", fields: ["id"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Comment @model @key(name: "byPhoto", fields: ["photoID", "content"]) @auth(rules: [{allow: public}]) {
+  id: ID!
+  photoID: ID!
+  photo: Photo @connection(fields: ["photoID"])
+  content: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+  
