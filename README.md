@@ -6,7 +6,7 @@ https://y2abba-photo-vault.com/
 **Description:**
 
 Create an account, sign in, and get started!
-You can upload and delete as many photos as you want, these photos are linked to your account, and are yours only!
+You can upload and delete as many photos as you want, these photos are linked to your account, and are your's only!
 Search for an image by its filename and click on an image to get access to its public URL, and share it with friends if you want!
 Feel free to play around!
 
